@@ -1,0 +1,37 @@
+[
+  {
+    "fname": "LaKeisha",
+    "lname": "Wren",
+    "email": "lakeishawren@yahoo.com",
+    "dogs": [
+      {
+        "name": "Nikko",
+        "breed": "Shiba Inu",
+        "age": 5,
+        "gender": "male",
+        "vaccination_status": "current"
+      },
+      {
+        "name": "Milo",
+        "breed": "Yorkie",
+        "age": 4,
+        "gender": "male",
+        "vaccination_status": "current"
+      }
+    ]
+  },
+  {
+    "fname": "Taylor",
+    "lname": "Todd",
+    "email": "taylortodd@gmail.com",
+    "dogs": [
+      {
+        "name": "Jet",
+        "breed": "Lab",
+        "age": 2,
+        "gender": "male",
+        "vaccination_status": "current"
+      }
+    ]
+  }
+]
