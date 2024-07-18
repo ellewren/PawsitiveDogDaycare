@@ -20,7 +20,7 @@ def register_for_services():
     Owner.load_owners()
     selected_dog = Owner.select_dog_for_service()
     if selected_dog:
-        print(f"{selected_dog.dog_name} has been selected for service.")
+        print(f"{selected_dog.name} has been selected for service.")
     else:
         print("Owner or dog not found.")
         return

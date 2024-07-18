@@ -9,28 +9,27 @@
         "breed": "Shiba Inu",
         "age": 5,
         "gender": "male",
-        "vaccination_status": "current"
+        "vaccination_status": "current",
+        "owner_fname": "LaKeisha",
+        "owner_lname": "Wren"
       },
       {
         "name": "Milo",
         "breed": "Yorkie",
         "age": 4,
         "gender": "male",
-        "vaccination_status": "current"
-      }
-    ]
-  },
-  {
-    "fname": "Taylor",
-    "lname": "Todd",
-    "email": "taylortodd@gmail.com",
-    "dogs": [
+        "vaccination_status": "current",
+        "owner_fname": "LaKeisha",
+        "owner_lname": "Wren"
+      },
       {
-        "name": "Jet",
-        "breed": "Lab",
+        "name": "Benji",
+        "breed": "Poodle",
         "age": 2,
         "gender": "male",
-        "vaccination_status": "current"
+        "vaccination_status": "current",
+        "owner_fname": "LaKeisha",
+        "owner_lname": "Wren"
       }
     ]
   }

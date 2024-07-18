@@ -5,6 +5,7 @@ import re
 class Owner:
 
     # Private attribute used to maintain data integrity preventing unauthorized changes to owners records and display understanding of encapsulation
+    
     __owners_dict = {}
 
     def __init__(self, fname, lname, email,dogs):
@@ -77,7 +78,7 @@ class Owner:
                     else:
                         print("Invalid input. Please enter current or not current")
 
-                dogs.append(Dog(dog_name, dog_breed, dog_age, gender, vaccination_status))
+                dogs.append(Dog(dog_name, dog_breed, dog_age, gender, vaccination_status, fname, lname))
                 more_dogs = input("Do you want to add another dog? (yes/no): ").strip().lower()
                 if more_dogs != "yes":
                     break
@@ -152,7 +153,7 @@ class Owner:
                     print(f"No owner found with email '{email}'.")
                 else:
                     owner = cls.__owners_dict[email]
-                    break
+                    break  # Exit the loop once a valid owner is found
             except ValueError:
                 print("Invalid email format. Please enter a valid email.")
 
@@ -191,11 +192,11 @@ class Owner:
                     else:
                         print("Invalid input. Please enter current or not current")
         
-                dog = Dog(dog_name, dog_breed, dog_age, gender, vaccination_status)
+                dog = Dog(dog_name, dog_breed, dog_age, gender, vaccination_status, owner.fname, owner.lname)
                 owner.dogs.append(dog)
                 cls.save_owners()
                 
-                return f"{dog_name} added to owner {owner.fname} {owner.lname} and daycare records."
+                print(f"{dog_name} added to owner {owner.fname} {owner.lname} and daycare records.")
         
     @classmethod
     def select_dog_for_service(cls):
