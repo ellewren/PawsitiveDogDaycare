@@ -1,7 +1,7 @@
 import random
 from  datetime import datetime
 
-#Parent class holding list of workers and attributes needed by child classes at Pawsitive Stay Dog Daycare
+#Parent class holding list of workers and attributes needed by child classes
 class Services:
 
     worker = ["Ashley", "Jeffery", "Collin", "Shelly", "Gabriel", "Amy", "Edward", "Amilia", "Rocko", "Jamal", "Harry"]
