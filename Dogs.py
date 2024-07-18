@@ -11,6 +11,8 @@ class Dog:
         self.owner_fname = owner_fname
         self.owner_lname = owner_lname
 
+    # to_dict method used to serialize dog object to be able to save to json file 
+
     def to_dict(self):
         return {
             "name": self.name,

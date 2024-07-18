@@ -4,7 +4,7 @@ import re
 
 class Owner:
 
-    # Private attribute used to maintain data integrity preventing unauthorized changes to owners records and display understanding of encapsulation
+    # Private attribute used to maintain data integrity preventing unauthorized changes to owners
     
     __owners_dict = {}
 
@@ -18,7 +18,9 @@ class Owner:
         regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b' 
         return re.fullmatch(regex, email) is not None
 
-    # @classmethod used to manage class level data such as owners and dogs are consistent across all instances
+    # @classmethod used to manage class level data such as owners and dogs to ensure they're consistent across all instances
+    # while loops used through file for data validation, user are prompter for correct response until system receives valid input 
+
     @classmethod
     def add_owner(cls):
         while True:
@@ -91,6 +93,8 @@ class Owner:
         dog_names = ', '.join([dog.name for dog in dogs])
         return f"{fname} {lname}, and their pet(s) {dog_names} have been added to daycare records."
     
+    # save new owner entries to json file to persist data 
+    
     @classmethod
     def save_owners(cls):
         with open("daycaredata.json", "w") as json_file:
@@ -107,6 +111,8 @@ class Owner:
                 json_file,
                 indent=2
             )
+
+    # load existing owners to prevent duplicates and retrieve owners and pets for services 
 
     @classmethod
     def load_owners(cls):
@@ -125,12 +131,8 @@ class Owner:
         except FileNotFoundError:
             cls.__owners_dict = {}
 
-    @classmethod
-    def display_owners(cls):
-        for owner in cls.__owners_dict.values():
-            print(f"Owner: {owner.fname} {owner.lname}, Email: {owner.email}, Dog: {owner.dog_name}")
+    # owner look up, returns owners information and registered pets 
 
-    
 
     @classmethod
     def find_and_display_owner(cls, email):
@@ -142,6 +144,7 @@ class Owner:
         else:
             return "Owner not found."
 
+    # add new dog to existing owner
     
     @classmethod
     def add_dog(cls):
@@ -197,6 +200,8 @@ class Owner:
                 cls.save_owners()
                 
                 print(f"{dog_name} added to owner {owner.fname} {owner.lname} and daycare records.")
+
+    # retrieve owners pet/pets to select which dog will receive service 
         
     @classmethod
     def select_dog_for_service(cls):
@@ -214,7 +219,7 @@ class Owner:
 
         print("Select a dog for service:")
         for idx, dog in enumerate(owner.dogs):
-            print(f"{idx + 1}. {dog.name} - {dog.breed}")
+            print(f"{idx + 1}. {dog.name} - {dog.breed} {dog.age}")
 
         dog_index = int(input("Enter the number of the dog: ")) - 1
         if 0 <= dog_index < len(owner.dogs):
